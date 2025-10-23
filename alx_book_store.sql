@@ -17,7 +17,7 @@ CREATE TABLE Authors (
 CREATE TABLE Customers (
     customer_id PRIMARY KEY,
     customer_name VARCHAR(215),
-    email VARCHAR(255) UNIQUE,
+    email VARCHAR(215) UNIQUE,
     address TEXT
 )
 
