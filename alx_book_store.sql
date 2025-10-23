@@ -9,9 +9,10 @@ CREATE TABLE Authors (
 CREATE TABLE Books (
     book_id INT PRIMARY KEY,
     title VARCHAR(130),
-    author_id INT FOREIGN KEY(author_id) REFERENCES Authors(author_id),
-    price DOUBLE PRECISION,
-    publication_date DATE
+    author_id INT,
+    price DOUBLE ,
+    publication_date DATE,
+    FOREIGN KEY(author_id) REFERENCES Authors(author_id)
 )
 
 CREATE TABLE Customers (
@@ -29,8 +30,10 @@ CREATE TABLE Orders (
 )
 
 CREATE TABLE Order_Details (
-    order_detail_id INT PRIMARY KEY,
-    order_id FOREIGN KEY REFERENCES Orders(order_id),
-    book_id FOREIGN KEY REFERENCES Books(book_id),
-    quantity DOUBLE PRECISION
+    order_detailid INT PRIMARY KEY,
+    order_id INT,
+    book_id INT,
+    quantity DOUBLE,
+    FOREIGN KEY (order_id) KEY REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
 )
